@@ -1,2 +1,9 @@
 # ece-128-lab-4
 ECE 128 Lab 4. Design and Implementation of a Vehicle Safety Interlock &amp; Warning System in Verilog using Vivado and a Basys 3 FPGA board.
+
+### Project Description
+
+### Instructions
+There is one design file, safety_interlock_and_warning_system.v and one testbench safety_interlock_and_warning_system.v. The design file uses one top module, safety_interlock_and_warning_system, with each input and output having their own individual signals. The first part of the module uses dataflow modeling to assign the seven warning outputs to the correct equations based on the key and their respective sensor. Next the module uses dataflow modeling to assign the warning priority outputs to the correct equations based on the warning outputs. Finally the code uses dataflow modeling to assign the correct equations for the chime based on the warning priority outputs and the correct equation for the start permit. In order to run the simulation and produce the waveform, one must instantiate the safety_interlock_and_warning_system module in the testbench. The testbench is set up to check every warning output signal individually while also checking that the warning priorities and chime work properly. Finally, it makes sure all warning outputs can be on a the same time and checks to makes sure the start permit works properly. 
+
+In order to implement the FPGA, one must run the synthesis and implementation on Vivado with the design file, safety_interlock_and_warning_system.v, as the top design source. Once that is done, the bitstream can be generated and the device can be programmed with the constraints defined in the safety_interlock_and_warning_system.xdc file. Using a Basys 3 FPGA board, the constraint file defines what switches refer to which inputs and which leds refer to which outputs.
